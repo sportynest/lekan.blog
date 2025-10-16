@@ -79,6 +79,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "Lekan Blog",
   },
+  other: {
+    "og:site_name": "Lekan Blog",
+  },
 }
 
 export default function RootLayout({
