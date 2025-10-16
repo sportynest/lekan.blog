@@ -1,19 +1,31 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+"use client"
+
+import { Github, Linkedin } from "lucide-react"
+import { ThemeToggle } from "../../components/ui/theme-toggle"
+import "../footer.css"
 
 const Footer = () => {
   return (
-    <footer className="bg-background text-foreground border-t border-border py-6">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <p>&copy; {new Date().getFullYear().toString()} Lekan </p>
-        <div className="flex space-x-4">
+    <footer className="footer-container">
+      <div className="footer-left">
+        <div className="footer-social-links">
           <a
             href="https://github.com/sportynest"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground hover:text-accent-foreground transition-colors"
+            className="footer-social-icon first-child"
           >
-            <FaGithub size={24} />
+            <Github size={16} />
           </a>
+          <a
+            href="https://linkedin.com/in/lekan-soyewo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-social-icon"
+          >
+            <Linkedin size={16} />
+          </a>
+          <ThemeToggle className="last-child" />
         </div>
       </div>
     </footer>
