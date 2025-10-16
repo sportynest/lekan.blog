@@ -1,6 +1,7 @@
 import { getBlogPost, getBlogPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import "../../blog-post.css"
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getBlogPost(params.slug)
@@ -14,11 +15,37 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${post.title} - Lekan Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      url: `https://lekan.blog/blog/${params.slug}`,
       publishedTime: post.date,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Lekan Blog`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      creator: '@lekan',
+      images: [
+        {
+          url: "/twitter-image.png",
+          width: 1200,
+          height: 675,
+          alt: `${post.title} - Lekan Blog`,
+        },
+      ],
     },
   }
 }
@@ -38,10 +65,32 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-muted-foreground mb-8">{post.date}</p>
-      <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+    <div className="blog-post-container">
+      <h1 className="blog-post-title">{post.title}</h1>
+      <p className="blog-post-date">{post.date}</p>
+      <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            dateModified: post.date,
+            author: {
+              "@type": "Person",
+              name: "Lekan",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://lekan.blog/blog/${post.slug}`,
+            },
+            url: `https://lekan.blog/blog/${post.slug}`,
+          }),
+        }}
+      />
     </div>
   )
 }
