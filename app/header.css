@@ -10,7 +10,7 @@
 }
 
 .header {
-  background-color: var(--background-main);
+  background-color: transparent;
   color: var(--text-main);
   animation: slideDown 0.6s ease-out;
   position: sticky;

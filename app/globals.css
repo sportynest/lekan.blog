@@ -48,7 +48,7 @@
 .dark {
   --background-main: rgb(12, 10, 9);
   --background-secondary: rgb(39, 39, 42);
-  --background-hover: rgb(39, 39, 42);
+  --background-hover: rgb(60, 60, 65);
 
   --text-main: rgb(245, 245, 245);
   --text-secondary: rgb(163, 163, 163);
