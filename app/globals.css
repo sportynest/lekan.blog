@@ -47,15 +47,15 @@
 }
 
 .dark {
-  --background-main: rgb(12, 10, 9);
-  --background-secondary: rgb(39, 39, 42);
-  --background-hover: rgb(60, 60, 65);
+  --background-main: rgb(240, 235, 220);
+  --background-secondary: rgb(230, 225, 210);
+  --background-hover: rgb(220, 215, 200);
 
-  --text-main: rgb(245, 245, 245);
-  --text-secondary: rgb(163, 163, 163);
+  --text-main: rgb(45, 41, 35);
+  --text-secondary: rgb(85, 82, 75);
 
-  --border-color: rgb(39, 39, 42);
-  --border-secondary: rgb(39, 39, 42);
+  --border-color: rgb(200, 190, 175);
+  --border-secondary: rgb(210, 200, 185);
 
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
