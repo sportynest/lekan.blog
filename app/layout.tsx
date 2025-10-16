@@ -74,13 +74,6 @@ export const metadata: Metadata = {
     apple: [
       { url: "https://cdn.cognora.ca/Lekan.blog/favicons/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    other: [
-      {
-        rel: "icon",
-        type: "image/svg+xml",
-        url: "/icon0.svg",
-      },
-    ],
   },
   manifest: "/manifest.json",
   appleWebApp: {
