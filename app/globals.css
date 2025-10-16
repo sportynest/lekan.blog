@@ -1,77 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --background-main: rgb(255, 255, 255);
+  --background-secondary: rgb(245, 245, 245);
+  --background-hover:  rgb(237, 237, 237);
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+  --text-main: rgb(12, 10, 9);
+  --text-secondary: rgb(115, 115, 115);
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+  --border-color: rgb(228, 228, 231);
+  --border-secondary: rgb(245, 245, 245);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+  --font-size-xxs: 8px;
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+  --spacing-xxs: 4px;
+  --spacing-xs: 6px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 48px;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-  }
+  --padding-xxs: 4px;
+  --padding-xs: 6px;
+  --padding-sm: 8px;
+  --padding-md: 12px;
+  --padding-lg: 26px;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.dark {
+  --background-main: rgb(12, 10, 9);
+  --background-secondary: rgb(39, 39, 42);
+  --background-hover: rgb(39, 39, 42);
+
+  --text-main: rgb(245, 245, 245);
+  --text-secondary: rgb(163, 163, 163);
+
+  --border-color: rgb(39, 39, 42);
+  --border-secondary: rgb(39, 39, 42);
+
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
 }
 
