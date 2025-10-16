@@ -23,10 +23,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: post.excerpt,
       type: 'article',
       url: `https://lekan.blog/blog/${params.slug}`,
+      siteName: "Lekan Blog",
       publishedTime: post.date,
       images: [
         {
-          url: "/og-image.png",
+          url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
           width: 1200,
           height: 630,
           alt: `${post.title} - Lekan Blog`,
@@ -40,9 +41,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       creator: '@lekan',
       images: [
         {
-          url: "/twitter-image.png",
+          url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
           width: 1200,
-          height: 675,
+          height: 630,
           alt: `${post.title} - Lekan Blog`,
         },
       ],

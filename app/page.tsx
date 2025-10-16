@@ -5,19 +5,19 @@ import "./home.css"
 
 export const metadata: Metadata = {
   description:
-    "Welcome to my personal blog where I share insights about software development, technology, and philosophy.",
+    "A personal blog about software development, technology, and philosophy.",
   openGraph: {
     title: "Lekan Blog",
     description:
-      "Welcome to my personal blog where I share insights about software development, technology, and philosophy.",
+      "A personal blog about software development, technology, and philosophy.",
     type: "website",
     url: "https://lekan.blog",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "Lekan Blog - Software Development & Technology Insights",
+        alt: "Lekan Blog - Philosophy, Technology, and Software Development",
       },
     ],
   },
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lekan Blog",
     description:
-      "Welcome to my personal blog where I share insights about software development, technology, and philosophy.",
+      "A personal blog about software development, technology, and philosophy.",
     creator: "@lekan",
     images: [
       {
-        url: "/twitter-image.png",
+        url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
         width: 1200,
-        height: 675,
-        alt: "Lekan Blog - Software Development & Technology Insights",
+        height: 630,
+        alt: "Lekan Blog - Philosophy, Technology, and Software Development",
       },
     ],
   },

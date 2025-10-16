@@ -57,32 +57,32 @@ export const metadata: Metadata = {
     creator: "@lekan",
     images: [
       {
-        url: "/twitter-image.png",
+        url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
         width: 1200,
-        height: 675,
-        alt: "Lekan Blog - Software Development & Technology Insights",
+        height: 630,
+        alt: "Lekan Blog - Philosophy, Technology, and Software Development",
       },
     ],
   },
   icons: {
     icon: [
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "https://cdn.cognora.ca/Lekan.blog/favicons/icon1.png", sizes: "96x96", type: "image/png" },
     ],
     shortcut: [
-      { url: "/favicon.ico" },
+      { url: "https://cdn.cognora.ca/Lekan.blog/favicons/favicon.ico" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "https://cdn.cognora.ca/Lekan.blog/favicons/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
       {
         rel: "icon",
         type: "image/svg+xml",
-        url: "/favicon.svg",
+        url: "/icon0.svg",
       },
     ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
   appleWebApp: {
     title: "Lekan Blog",
   },
