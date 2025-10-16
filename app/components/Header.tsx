@@ -1,43 +1,30 @@
 "use client"
 
 import Link from "next/link"
-import { Menu } from "lucide-react"
-import { useState } from "react"
+import "../header.css"
+import { Home01Icon, News01Icon } from "hugeicons-react"
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
   return (
-    <header className="bg-background text-foreground border-b border-border">
-      <nav className="container mx-auto px-4 py-6">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            Lekan Blog
-          </Link>
-          <div className="hidden md:flex space-x-6 items-center">
-            <Link href="/" className="hover:text-accent-foreground transition-colors">
-              Home
-            </Link>
-            <Link href="/blog" className="hover:text-accent-foreground transition-colors">
-              All Posts
-            </Link>
-          </div>
-          <button className="md:hidden" onClick={toggleMenu}>
-            <Menu size={24} />
-          </button>
+    <header className="header">
+      <nav className="header-nav">
+        <div className="header-left">
         </div>
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-4">
-            <Link href="/" className="block hover:text-accent-foreground transition-colors">
-              Home
-            </Link>
-            <Link href="/blog" className="block hover:text-accent-foreground transition-colors">
-              All Posts
-            </Link>
-          </div>
-        )}
+        <div className="header-nav-links">
+          <a
+            href="https://lekan.ca"
+            className="header-nav-link first-child"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Home01Icon size={16} />
+            Home
+          </a>
+          <Link href="/blog" className="header-nav-link last-child">
+            <News01Icon size={16} />
+            All Posts
+          </Link>
+        </div>
       </nav>
     </header>
   )
