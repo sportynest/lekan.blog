@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: post.title,
     description: post.excerpt,
-    authors: [{ name: "Lekan (Paul) Soyewo", url: "https://lekan.ca" }],
+    authors: [{ name: "Lekan (Paul) Soyewo", url: "https://www.lekan.ca" }],
     alternates: {
       canonical: `/blog/${params.slug}`,
     },
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       url: `/blog/${params.slug}`,
       siteName: "Lekan's Blog",
       publishedTime: post.date,
-      authors: ["https://lekan.ca"],
+      authors: ["https://www.lekan.ca"],
     },
     twitter: {
       card: "summary_large_image",
@@ -82,12 +82,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               "@type": "Person",
               name: "Lekan Soyewo",
               alternateName: "Paul Soyewo",
-              url: "https://lekan.ca",
+              url: "https://www.lekan.ca",
             },
             publisher: {
               "@type": "Person",
               name: "Lekan Soyewo",
-              url: "https://lekan.ca",
+              url: "https://www.lekan.ca",
             },
             mainEntityOfPage: {
               "@type": "WebPage",

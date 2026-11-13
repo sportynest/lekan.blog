@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "web development",
     "engineering",
   ],
-  authors: [{ name: "Lekan (Paul) Soyewo", url: "https://lekan.ca" }],
+  authors: [{ name: "Lekan (Paul) Soyewo", url: "https://www.lekan.ca" }],
   creator: "Lekan (Paul) Soyewo",
   publisher: "Lekan (Paul) Soyewo",
   alternates: {

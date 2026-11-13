@@ -13,7 +13,7 @@ const Header = () => {
         </div>
         <div className="header-nav-links">
           <ThemeLink
-            href="https://lekan.ca"
+            href="https://www.lekan.ca"
             className="header-nav-link first-child"
           >
             <Home01Icon size={16} />
