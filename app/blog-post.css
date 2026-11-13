@@ -17,6 +17,20 @@
   animation: fadeInUp 0.6s ease-out;
 }
 
+.blog-post-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1600 / 843;
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: var(--background-secondary);
+}
+
+.blog-post-cover img {
+  object-fit: cover;
+}
+
 .blog-post-title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);

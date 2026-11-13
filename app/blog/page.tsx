@@ -1,21 +1,23 @@
 import Link from "next/link"
+import Image from "next/image"
 import { getBlogPosts } from "@/lib/blog"
 import type { Metadata } from "next"
 import "../home.css"
 
 export const metadata: Metadata = {
-  title: 'Blog - Lekan Blog',
-  description: 'Articles and thoughts on software development, technology, and more.',
+  title: "All Posts",
+  description: "Articles and thoughts on software development, technology, and more.",
+  alternates: { canonical: "/blog" },
   openGraph: {
-    title: 'Blog - Lekan Blog',
-    description: 'Articles and thoughts on software development, technology, and more.',
-    type: 'website',
+    title: "All Posts | Lekan's Blog",
+    description: "Articles and thoughts on software development, technology, and more.",
+    type: "website",
+    url: "/blog",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Blog - Lekan Blog',
-    description: 'Articles and thoughts on software development, technology, and more.',
-    creator: '@lekan',
+    card: "summary_large_image",
+    title: "All Posts | Lekan's Blog",
+    description: "Articles and thoughts on software development, technology, and more.",
   },
 }
 
@@ -29,6 +31,11 @@ export default async function BlogPage() {
           {posts.map((post) => (
             <div key={post.slug} className="blog-card">
               <Link href={`/blog/${post.slug}`}>
+                {post.cover && (
+                  <div className="blog-card-cover">
+                    <Image src={post.cover} alt="" fill sizes="300px" />
+                  </div>
+                )}
                 <h3 className="blog-card-title">{post.title}</h3>
                 <p className="blog-card-excerpt">{post.excerpt}</p>
                 <span className="blog-card-date">{post.date}</span>

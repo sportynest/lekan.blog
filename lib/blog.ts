@@ -11,6 +11,8 @@ type BlogPost = {
   title: string
   date: string
   excerpt: string
+  cover?: string
+  coverAlt?: string
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
@@ -30,6 +32,8 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       title: matterResult.data.title,
       date: matterResult.data.date,
       excerpt: matterResult.data.excerpt,
+      cover: matterResult.data.cover,
+      coverAlt: matterResult.data.coverAlt,
     }
   })
 
@@ -54,6 +58,8 @@ export async function getBlogPost(slug: string): Promise<BlogPostWithContent> {
     date: matterResult.data.date,
     content: contentHtml,
     excerpt: matterResult.data.excerpt,
+    cover: matterResult.data.cover,
+    coverAlt: matterResult.data.coverAlt,
   }
 }
 

@@ -123,6 +123,24 @@
   color: inherit;
 }
 
+.blog-card-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1600 / 843;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--background-secondary);
+}
+
+.blog-card-cover img {
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover .blog-card-cover img {
+  transform: scale(1.04);
+}
+
 .blog-card:hover {
   background-color: var(--background-hover);
 }

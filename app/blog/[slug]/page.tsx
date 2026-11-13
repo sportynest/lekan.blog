@@ -1,5 +1,6 @@
 import { getBlogPost, getBlogPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
+import Image from "next/image"
 import type { Metadata } from "next"
 import "../../blog-post.css"
 
@@ -13,40 +14,25 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
   
   return {
-    title: `${post.title} - Lekan Blog`,
+    title: post.title,
     description: post.excerpt,
+    authors: [{ name: "Lekan (Paul) Soyewo", url: "https://lekan.ca" }],
     alternates: {
       canonical: `/blog/${params.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      type: 'article',
-      url: `https://lekan.blog/blog/${params.slug}`,
-      siteName: "Lekan Blog",
+      type: "article",
+      url: `/blog/${params.slug}`,
+      siteName: "Lekan's Blog",
       publishedTime: post.date,
-      images: [
-        {
-          url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
-          width: 1200,
-          height: 630,
-          alt: `${post.title} - Lekan Blog`,
-        },
-      ],
+      authors: ["https://lekan.ca"],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      creator: '@lekan',
-      images: [
-        {
-          url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
-          width: 1200,
-          height: 630,
-          alt: `${post.title} - Lekan Blog`,
-        },
-      ],
     },
   }
 }
@@ -67,6 +53,17 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   return (
     <div className="blog-post-container">
+      {post.cover && (
+        <div className="blog-post-cover">
+          <Image
+            src={post.cover}
+            alt={post.coverAlt ?? ""}
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 900px"
+          />
+        </div>
+      )}
       <h1 className="blog-post-title">{post.title}</h1>
       <p className="blog-post-date">{post.date}</p>
       <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -78,11 +75,19 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             "@type": "BlogPosting",
             headline: post.title,
             description: post.excerpt,
+            ...(post.cover ? { image: `https://lekan.blog${post.cover}` } : {}),
             datePublished: post.date,
             dateModified: post.date,
             author: {
               "@type": "Person",
-              name: "Lekan",
+              name: "Lekan Soyewo",
+              alternateName: "Paul Soyewo",
+              url: "https://lekan.ca",
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Lekan Soyewo",
+              url: "https://lekan.ca",
             },
             mainEntityOfPage: {
               "@type": "WebPage",

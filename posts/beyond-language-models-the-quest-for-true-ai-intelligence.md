@@ -2,6 +2,8 @@
 title: "The State of AI: Beyond Language Models and the Quest for True Intelligence"
 date: "2024-07-10"
 excerpt: "A look at the current state of AI and the quest for true intelligence."
+cover: "/covers/beyond-language-models-the-quest-for-true-ai-intelligence.jpg"
+coverAlt: "Abstract painting: dense green and teal brushstrokes resolving into a band of warm gold light"
 ---
 
 
