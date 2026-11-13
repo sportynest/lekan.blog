@@ -24,9 +24,11 @@ export default async function Home() {
                     <Image src={post.cover} alt="" fill sizes="300px" />
                   </div>
                 )}
-                <h3 className="blog-card-title">{post.title}</h3>
-                <p className="blog-card-excerpt">{post.excerpt}</p>
-                <span className="blog-card-date">{post.date}</span>
+                <div className={`blog-card-body${post.cover ? " has-cover" : ""}`}>
+                  <h3 className="blog-card-title">{post.title}</h3>
+                  <p className="blog-card-excerpt">{post.excerpt}</p>
+                  <span className="blog-card-date">{post.date}</span>
+                </div>
               </Link>
             </div>
           ))}
@@ -45,7 +47,7 @@ export default async function Home() {
               "@type": "Person",
               name: "Lekan Soyewo",
               alternateName: "Paul Soyewo",
-              url: "https://lekan.ca",
+              url: "https://www.lekan.ca",
             },
           }),
         }}
