@@ -1,4 +1,4 @@
-# Lekan Blog
+# Lekan's Blog
 
 A modern, responsive personal blog built with Next.js, TypeScript, and Tailwind CSS. This blog focuses on sharing insights about software development, technology, artificial intelligence, and philosophy.
 

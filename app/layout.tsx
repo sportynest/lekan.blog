@@ -3,6 +3,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
+import { themeFromUrlScript } from "./components/themeFromUrl"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import type React from "react"
@@ -12,12 +13,12 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://lekan.blog"),
   title: {
-    default: "Lekan Blog",
-    template: "%s | Lekan Blog",
+    default: "Lekan's Blog",
+    template: "%s | Lekan's Blog",
   },
   description:
     "Personal blog sharing insights on software development, technology, and philosophy.",
-  applicationName: "Lekan Blog",
+  applicationName: "Lekan's Blog",
   keywords: [
     "software development",
     "technology",
@@ -26,43 +27,26 @@ export const metadata: Metadata = {
     "web development",
     "engineering",
   ],
-  authors: [{ name: "Lekan" }],
-  creator: "Lekan",
-  publisher: "Lekan",
+  authors: [{ name: "Lekan (Paul) Soyewo", url: "https://lekan.ca" }],
+  creator: "Lekan (Paul) Soyewo",
+  publisher: "Lekan (Paul) Soyewo",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    siteName: "Lekan Blog",
+    siteName: "Lekan's Blog",
     url: "https://lekan.blog",
-    title: "Lekan Blog",
+    title: "Lekan's Blog",
     description:
       "Personal blog sharing insights on software development, technology, and philosophy.",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Lekan Blog - Software Development & Technology Insights",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lekan Blog",
+    title: "Lekan's Blog",
     description:
       "Personal blog sharing insights on software development, technology, and philosophy.",
-    creator: "@lekan",
-    images: [
-      {
-        url: "https://cdn.cognora.ca/Lekan.blog/lekan-blog-og-image-1200x630.png",
-        width: 1200,
-        height: 630,
-        alt: "Lekan Blog - Philosophy, Technology, and Software Development",
-      },
-    ],
   },
   icons: {
     icon: [
@@ -77,10 +61,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   appleWebApp: {
-    title: "Lekan Blog",
-  },
-  other: {
-    "og:site_name": "Lekan Blog",
+    title: "Lekan's Blog",
   },
 }
 
@@ -91,6 +72,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeFromUrlScript }} />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="app-container">

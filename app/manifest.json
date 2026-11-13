@@ -1,6 +1,6 @@
 {
-  "name": "Lekan Blog",
-  "short_name": "Lekan Blog",
+  "name": "Lekan's Blog",
+  "short_name": "Lekan's Blog",
   "description": "Personal blog sharing insights on software development, technology, and philosophy.",
   "start_url": "/",
   "scope": "/",
